@@ -23,8 +23,8 @@ const projectData = {
     description: 'Sistema de planificación de recursos empresariales (ERP) desarrollado con React y Node.js. Incluye módulos de gestión de inventario, contabilidad, recursos humanos y generación de reportes. Implementa autenticación JWT y manejo de roles de usuario.'
   },
   amiibo: {
-    title: 'Amiibo',
-    description: 'Aplicación web que consume la API de Amiibo de Nintendo para mostrar información detallada sobre las figuras Amiibo. Desarrollada con Vue.js, implementa filtrado dinámico, búsqueda en tiempo real y visualización de detalles de cada figura.'
+    title: 'Amiibo Snatch',
+    description: 'Aplicación interactiva que permite la lectura de figuras Amiibo mediante tecnología NFC, mostrando automáticamente en pantalla el perfil del personaje detectado. Desarrollada con C++, C, JavaScript, HTML, CSS y Python para una experiencia completa de hardware y software.'
   },
   calculator: {
     title: 'Calculadora',

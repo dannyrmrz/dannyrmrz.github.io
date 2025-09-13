@@ -107,7 +107,8 @@ const MenuItem = styled(motion.h2)`
 
 const projectItems = [
   { id: 'erp', label: 'ERP' },
-  { id: 'calculator', label: 'Calculadora' }
+  { id: 'calculator', label: 'Calculadora' },
+  { id: 'amiibo', label: 'Amiibo Snatch' }
 ];
 
 const ProjectsMenu = ({ onBack, onSelect }) => {

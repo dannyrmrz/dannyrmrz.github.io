@@ -127,18 +127,70 @@ const OverlayText = styled.span`
   font-family: 'Press Gothic', sans-serif;
 `;
 
+const VideoContainer = styled(motion.div)`
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+const ProjectVideo = styled.video`
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+`;
+
+const VideoOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const VideoOverlayText = styled.span`
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Press Gothic', sans-serif;
+`;
+
 const projectData = {
   erp: {
     title: 'ERP',
     description: 'Sistema de gestión empresarial (ERP) para EconoFarma, una farmacia ubicada en el interior de Guatemala, con el objetivo de automatizar sus operaciones clave como ventas, inventario, contabilidad, documentación sanitaria y gestión de proveedores. La aplicación está diseñada para mejorar la eficiencia operativa y la toma de decisiones estratégicas, adaptándose a las necesidades de distintos roles dentro de la farmacia. Para el frontend se utilizó React 19 con Vite 6.2 y el plugin oficial de React, mientras que el backend fue construido con Express 5.1, PostgreSQL como base de datos (a través del cliente pg 8.13.3), y herramientas complementarias como dotenv para variables de entorno, cors para manejo de acceso HTTP y nodemon para recarga automática durante el desarrollo.',
     image: '/src/assets/images/erp-preview.png',
+    video: '/src/assets/videos/ERPvideo.mp4',
     repoUrl: 'https://github.com/DufreyM/ERP-frontend.git'
   },
   calculator: {
     title: 'Calculadora',
     description: 'Calculadora web interactiva, utilizando React para la construcción de componentes y Vite como empaquetador para un desarrollo rápido y eficiente. La aplicación permite realizar operaciones aritméticas básicas a través de una interfaz moderna, responsiva e intuitiva.',
     image: '/src/assets/images/calculator-preview.png',
+    video: '/src/assets/videos/calculadoravideo.mp4',
     repoUrl: 'https://github.com/dannyrmrz/CalculadoraSi.git'
+  },
+  amiibo: {
+    title: 'Amiibo Snatch',
+    description: 'Aplicación interactiva que permite la lectura de figuras Amiibo mediante tecnología NFC, mostrando automáticamente en pantalla el perfil del personaje detectado. El proyecto se desarrolló principalmente en C++ y C para la comunicación con el lector NFC y el procesamiento de bajo nivel, mientras que JavaScript, HTML y CSS conforman el frontend encargado de la visualización de los perfiles. Adicionalmente, se empleó Python para tareas auxiliares de integración y manejo de datos. La aplicación combina hardware y software para crear una experiencia inmersiva de detección y visualización de figuras Amiibo.',
+    image: '/src/assets/images/amiibo.jpeg',
+    video: '/videos/amiibovideo.mp4',
+    repoUrl: 'https://github.com/PeDro0210/Amiibo-Snatch'
   }
 };
 
@@ -166,6 +218,20 @@ const ProjectDetails = ({ projectId, onBack }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Auto-play video when component mounts
+  useEffect(() => {
+    const video = document.getElementById(`project-video-${projectId}`);
+    if (video) {
+      console.log('Video element found:', video);
+      console.log('Video src:', video.src);
+      video.play().catch(error => {
+        console.log('Auto-play was prevented:', error);
+      });
+    } else {
+      console.log('Video element not found for project:', projectId);
+    }
+  }, [projectId]);
+
   return (
     <SectionLayout title={project.title} onBack={onBack}>
       <ContentContainer>
@@ -191,6 +257,26 @@ const ProjectDetails = ({ projectId, onBack }) => {
           </ImageOverlay>
         </ImageContainer>
       </ContentContainer>
+      {project.video && (
+        <VideoContainer
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <ProjectVideo
+            id={`project-video-${projectId}`}
+            src={project.video}
+            controls
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          />
+          <VideoOverlay>
+            <VideoOverlayText>Video Demostrativo</VideoOverlayText>
+          </VideoOverlay>
+        </VideoContainer>
+      )}
     </SectionLayout>
   );
 };
