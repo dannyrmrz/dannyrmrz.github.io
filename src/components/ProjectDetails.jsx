@@ -174,8 +174,8 @@ const projectData = {
   erp: {
     title: 'ERP',
     description: 'Sistema de gestión empresarial (ERP) para EconoFarma, una farmacia ubicada en el interior de Guatemala, con el objetivo de automatizar sus operaciones clave como ventas, inventario, contabilidad, documentación sanitaria y gestión de proveedores. La aplicación está diseñada para mejorar la eficiencia operativa y la toma de decisiones estratégicas, adaptándose a las necesidades de distintos roles dentro de la farmacia. Para el frontend se utilizó React 19 con Vite 6.2 y el plugin oficial de React, mientras que el backend fue construido con Express 5.1, PostgreSQL como base de datos (a través del cliente pg 8.13.3), y herramientas complementarias como dotenv para variables de entorno, cors para manejo de acceso HTTP y nodemon para recarga automática durante el desarrollo.',
-    image: '/src/assets/images/erp-preview.png',
-    video: '/src/assets/videos/ERPvideo.mp4',
+    image: 'mages/erp-preview.png',
+    video: 'videos/ERPvideo.mp4',
     repoUrl: 'https://github.com/DufreyM/ERP-frontend.git'
   },
   calculator: {
@@ -188,8 +188,8 @@ const projectData = {
   amiibo: {
     title: 'Amiibo Snatch',
     description: 'Aplicación interactiva que permite la lectura de figuras Amiibo mediante tecnología NFC, mostrando automáticamente en pantalla el perfil del personaje detectado. El proyecto se desarrolló principalmente en C++ y C para la comunicación con el lector NFC y el procesamiento de bajo nivel, mientras que JavaScript, HTML y CSS conforman el frontend encargado de la visualización de los perfiles. Adicionalmente, se empleó Python para tareas auxiliares de integración y manejo de datos. La aplicación combina hardware y software para crear una experiencia inmersiva de detección y visualización de figuras Amiibo.',
-    image: '/src/assets/images/amiibo.jpeg',
-    video: '/videos/amiibovideo.mp4',
+    image: 'images/amiibo.jpeg',
+    video: 'videos/amiibovideo.mp4',
     repoUrl: 'https://github.com/PeDro0210/Amiibo-Snatch'
   }
 };
