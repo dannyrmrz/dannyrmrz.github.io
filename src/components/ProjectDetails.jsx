@@ -174,7 +174,7 @@ const projectData = {
   erp: {
     title: 'ERP',
     description: 'Sistema de gestión empresarial (ERP) para EconoFarma, una farmacia ubicada en el interior de Guatemala, con el objetivo de automatizar sus operaciones clave como ventas, inventario, contabilidad, documentación sanitaria y gestión de proveedores. La aplicación está diseñada para mejorar la eficiencia operativa y la toma de decisiones estratégicas, adaptándose a las necesidades de distintos roles dentro de la farmacia. Para el frontend se utilizó React 19 con Vite 6.2 y el plugin oficial de React, mientras que el backend fue construido con Express 5.1, PostgreSQL como base de datos (a través del cliente pg 8.13.3), y herramientas complementarias como dotenv para variables de entorno, cors para manejo de acceso HTTP y nodemon para recarga automática durante el desarrollo.',
-    image: 'mages/erp-preview.png',
+    image: 'images/erp-preview.png',
     video: 'videos/ERPvideo.mp4',
     repoUrl: 'https://github.com/DufreyM/ERP-frontend.git'
   },
