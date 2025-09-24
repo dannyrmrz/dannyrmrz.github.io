@@ -181,8 +181,8 @@ const projectData = {
   calculator: {
     title: 'Calculadora',
     description: 'Calculadora web interactiva, utilizando React para la construcción de componentes y Vite como empaquetador para un desarrollo rápido y eficiente. La aplicación permite realizar operaciones aritméticas básicas a través de una interfaz moderna, responsiva e intuitiva.',
-    image: '/src/assets/images/calculator-preview.png',
-    video: '/src/assets/videos/calculadoravideo.mp4',
+    image: 'images/calculator-preview.png',
+    video: 'videos/calculadoravideo.mp4',
     repoUrl: 'https://github.com/dannyrmrz/CalculadoraSi.git'
   },
   amiibo: {
